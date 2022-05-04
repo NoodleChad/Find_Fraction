@@ -197,4 +197,8 @@ class Model:
         Mets.Ich = Inchikey
         
 model = Model(Name_known, Formula_known, ID_known, Eff_charge, pka_I, K_I, P, Fractions, inchikey_known)
-print(len(model.Frac))
+
+# Save
+import pickle
+with open(f'iML1515_metabolites.pickle', 'wb') as file:
+    pickle.dump(model, file) 
