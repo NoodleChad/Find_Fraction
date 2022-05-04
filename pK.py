@@ -70,13 +70,6 @@ for i in k:
     print(Formula[i])
     print(newpKa[i])
 
-# Create a variable with all the right compounds
-
-l = (list(range(0,len(Unknown.name))))
-for i in l:
-    Metabolites.name.append(Unknown.name[i])
-    Metabolites.pKa.append(Unknown.name[i])
-
 # Create a class with all the compounds now that we know them all
 ## make sure that the size fits the model you are using
 
