@@ -131,7 +131,7 @@ for k in l:
     else:
         pka_kn = []
         K_kn = []
-        m = list(range(0,len(model.pka[k])))
+        m = list(range(0,len(pka[k])))
         for n in m:
             Temp = pka[k][n]+(1-2*min_charge[k]-2*(n+1))*f
             pka_kn.append(Temp)
