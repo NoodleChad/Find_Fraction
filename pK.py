@@ -113,8 +113,10 @@ for k in l:
 ## P: Effective polynomial
 ### Find the pKa at I = 0.1
 
+from math import e
+from math import log
 pka_I = []
-I = 0.1
+I = 0.25
 T = 37 + 273.15
 a = 1.10708 - 1.54508*10**(-3)*T + 5.95584*10**(-6)*T**(2)
 B = 1.6
@@ -133,9 +135,9 @@ for k in l:
         K_kn = []
         m = list(range(0,len(pka[k])))
         for n in m:
-            Temp = pka[k][n]+(1-2*min_charge[k]-2*(n+1))*f
-            pka_kn.append(Temp)
-            K_kn.append(10**-Temp)
+            Temp = 10**(-pka[k][n])*e**((2*min_charge[k]+2*(n+1)-1)*f)
+            pka_kn.append(-log(Temp))
+            K_kn.append(Temp)
         pka_I.append(pka_kn)
         K_I.append(K_kn)
 
